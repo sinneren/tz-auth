@@ -24,7 +24,7 @@ export class Auth extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.submitBtn.current.disabled = true;
-
+        
         if (this.state.email.length > 0 && this.state.password.length > 0) {
             this.props.actions.login({
                 email: this.state.email,
@@ -85,9 +85,22 @@ export class Auth extends Component {
             this.submitBtn.current.disabled = true;
         }
     }
+    resetState() {
+        this.setState(prevState => ({
+            ...prevState,
+            email: '',
+            password: ''
+        }));
+    }
     render() {
         const email_error_message = <span className="form-text text-danger">{this.state.errors.email}</span>;
         const password_error_message = <span className="form-text text-danger">{this.state.errors.password}</span>;
+        let alert_container = '';
+
+        if (this.props.errorMsg.length > 0) {
+            alert_container = <Alert alertType='danger' alertContent={this.props.errorMsg} />
+        }
+
         return (
             <form onSubmit={this.handleSubmit.bind(this)} >
                 <div>
@@ -104,7 +117,7 @@ export class Auth extends Component {
                 <div className="form-group">
                     <button type="submit" className="btn btn-primary" ref={this.submitBtn} disabled="disabled">{this.props.request ? <Spinner /> : 'Login'}</button>
                 </div>
-                {this.props.errorMsg ? <Alert alertType='danger' alertContent={this.props.errorMsg} /> : ''}
+                {alert_container}
             </form>
         )
     }

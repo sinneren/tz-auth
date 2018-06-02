@@ -11,7 +11,6 @@ const userIsAuthenticated = connectedRouterRedirect({
     redirectPath: '/login',
     authenticatedSelector: state => state.status !== false
 })
-console.log(this)
 
 export const routes = (
     <div>

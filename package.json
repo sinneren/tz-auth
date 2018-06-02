@@ -1,5 +1,5 @@
 {
-  "name": "tz-my",
+  "name": "tz-auth",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,14 +12,11 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
-    "redux-auth-wrapper": "^2.0.2",
-    "redux-promise-middleware": "^5.1.1"
+    "redux-auth-wrapper": "^2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "devDependencies": {
     "redux-logger": "^3.0.6",
