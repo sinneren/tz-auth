@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as AuthActions from '../../actions/AuthActions';
+import Menu from '../../components/Menu';
 
 class App extends Component {
     render() {
@@ -11,10 +12,7 @@ class App extends Component {
                 <header>
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         <Link to='/' className="navbar-brand">Navbar</Link>
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item"><Link to='/admin' className="nav-link" activeClassName='active'>Admin</Link></li>
-                            <li className="nav-item"><Link to='/login' className="nav-link" activeClassName='active'>Log in</Link></li>
-                        </ul>
+                        <Menu />
                     </nav>
                 </header>
                 <main>
