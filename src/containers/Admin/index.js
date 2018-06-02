@@ -4,6 +4,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class Admin extends Component {
+    componentDidMount() {
+        if (!this.props.auth) {
+            window.location = '/login'
+        }
+    }
     render() {
         return (
             <div className='container-fluid'>
