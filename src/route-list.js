@@ -5,10 +5,4 @@ export const ROUTE_LIST = [
         private: true,
         component: 'Admin'
     },
-    {
-        url: 'login',
-        name: 'Login',
-        private: false,
-        component: 'Login'
-    }
 ];

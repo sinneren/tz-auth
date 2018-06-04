@@ -12,7 +12,7 @@ class App extends Component {
                 <header>
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         <Link to='/' className="navbar-brand">Navbar</Link>
-                        <Menu />
+                        <Menu auth={this.props.state.auth}/>
                     </nav>
                 </header>
                 <main>
