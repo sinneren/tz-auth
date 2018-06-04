@@ -3,6 +3,9 @@ import { Link } from 'react-router';
 import { ROUTE_LIST } from '../../route-list';
 
 class Menu extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         let generated_menu_list = ROUTE_LIST.map(function (item, index) {
             return <li className="nav-item" key={index}><Link to={'/'+item.url} className="nav-link" activeClassName='active'>{item.name}</Link></li>

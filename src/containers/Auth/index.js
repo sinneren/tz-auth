@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as AuthActions from '../../actions/AuthActions';
 import Spinner from '../../components/Spinner';
 import Alert from '../../components/Alert';
+import { browserHistory } from 'react-router';
 
 const pattern_email = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm;
 
@@ -24,7 +25,7 @@ export class Auth extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.submitBtn.current.disabled = true;
-        
+
         if (this.state.email.length > 0 && this.state.password.length > 0) {
             this.props.actions.login({
                 email: this.state.email,
@@ -91,6 +92,11 @@ export class Auth extends Component {
             email: '',
             password: ''
         }));
+    }
+    componentDidUpdate() {
+        if (this.props.status) {
+            browserHistory.goBack();
+        }
     }
     render() {
         const email_error_message = <span className="form-text text-danger">{this.state.errors.email}</span>;

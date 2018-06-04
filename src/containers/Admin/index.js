@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import * as AuthActions from '../../actions/AuthActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 
 class Admin extends Component {
     componentDidMount() {
-        if (!this.props.auth) {
-            window.location = '/login'
+        if (!this.props.state.auth.status) {
+            browserHistory.push('/login')
         }
     }
     render() {
