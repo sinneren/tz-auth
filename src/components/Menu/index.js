@@ -19,13 +19,18 @@ class Menu extends Component {
     }
     render() {
         let generated_menu_list = ROUTE_LIST.map(function (item, index) {
-            return <li className="nav-item" key={index}><Link to={'/'+item.url} className="nav-link" activeClassName='active'>{item.name}</Link></li>
+            return <li className="nav-item" key={index}><Link to={'/'+item.url} className="nav-link" activeClassName="active">{item.name}</Link></li>
         });
+        let login_link = {
+            name: this.props.auth.status ? 'Logout' : 'Login',
+            url: this.props.auth.status ? 'logout' : 'login'
+        }
         return (
             <ul className="navbar-nav mr-auto">
                 {generated_menu_list}
+                {this.props.auth.status ? <li className="nav-item"><Link to={'/user/' + this.props.auth.id} className="nav-link" activeClassName="active">{this.props.auth.user}</Link></li> : ''}
                 <li className="nav-item">
-                    <Link to={'/' + this.props.auth.status ? this.login_link.auth.url : this.login_link.not_auth.url} className="nav-link" activeClassName='active'>{this.props.auth.status ? this.login_link.auth.name : this.login_link.not_auth.name}</Link>
+                    <Link to={'/' + login_link.url} className="nav-link" activeClassName="active">{login_link.name}</Link>
                 </li>
             </ul>
         )

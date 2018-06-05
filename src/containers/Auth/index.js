@@ -5,6 +5,7 @@ import * as AuthActions from '../../actions/AuthActions';
 import Spinner from '../../components/Spinner';
 import Alert from '../../components/Alert';
 import { browserHistory } from 'react-router';
+import './style.css';
 
 const pattern_email = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm;
 
@@ -108,7 +109,7 @@ export class Auth extends Component {
         }
 
         return (
-            <form onSubmit={this.handleSubmit.bind(this)} >
+            <form onSubmit={this.handleSubmit.bind(this)} className="form">
                 <div>
                     <h1>Login</h1>
                 </div>
@@ -121,7 +122,7 @@ export class Auth extends Component {
                     {(this.state.errors.password.length > 0) ? password_error_message : ''}
                 </div>
                 <div className="form-group">
-                    <button type="submit" className="btn btn-primary" ref={this.submitBtn} disabled="disabled">{this.props.request ? <Spinner /> : 'Login'}</button>
+                    <button type="submit" className="btn btn-primary btn-block" ref={this.submitBtn} disabled="disabled">{this.props.request ? <Spinner /> : 'Login'}</button>
                 </div>
                 {alert_container}
             </form>

@@ -7,6 +7,11 @@ API для получения данных пользователя
 "username":"Jeremy56@gmail.com"
 "password":"zoX__0EVLuirRao"
 
+### Страницы
+- /admin - Авторизованный доступ
+- /user/:id - Профиль пользователя
+- /login - Страница авторизации
+
 ### Команды
 - `npm run start` - для разработки
 - `npm run build` - для production
