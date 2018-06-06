@@ -1,46 +1,36 @@
 import {
-    LOGIN_REQUEST,
-    LOGIN_FAIL,
-    LOGIN_SUCCESS,
-    LOGOUT_SUCCESS
-} from '../constants/Auth';
+    NEWS_REQUEST,
+    NEWS_FAIL,
+    NEWS_SUCCESS,
+} from '../constants/News';
 
 const initialState = {
-    id: null,
-    user: null,
-    status: false,
+    data: null,
     errorMsg: "",
     request: false
 };
 
-export default function userstate(state = initialState, action) {
+export default function newslist(state = initialState, action) {
     switch (action.type) {
-        case LOGIN_REQUEST:
+        case NEWS_REQUEST:
             return {
                 ...state,
                 request: true,
                 errorMsg: '',
             }
             break;
-        case LOGIN_SUCCESS:
+        case NEWS_SUCCESS:
             return {
                 ...state,
-                id: action.response_data.id,
-                status: true,
-                user: action.response_data.username,
+                data: action.response_data,
                 request: false
             }
             break;
-        case LOGIN_FAIL:
+        case NEWS_FAIL:
             return {
                 ...state,
                 errorMsg: action.error_message,
                 request: false
-            }
-            break;
-        case LOGOUT_SUCCESS:
-            return {
-                ...initialState
             }
             break;
         default:
