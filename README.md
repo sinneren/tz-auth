@@ -4,13 +4,15 @@ API для получения данных пользователя
 [USER1](http://5ace0d5c23cb4e00148b83dd.mockapi.io/users/1)
 
 Данные для успешной авторизации:
-"username":"Jeremy56@gmail.com"
-"password":"zoX__0EVLuirRao"
+|
+`"username" : "Jeremy56@gmail.com"`
+`"password" : "zoX__0EVLuirRao"`
 
 ### Страницы
 - /admin - Авторизованный доступ
 - /user/:id - Профиль пользователя
 - /login - Страница авторизации
+- /logout - Страница выхода
 
 ### Команды
 - `npm run start` - для разработки

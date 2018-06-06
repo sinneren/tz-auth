@@ -2,7 +2,7 @@ import {
     LOGIN_REQUEST,
     LOGIN_FAIL,
     LOGIN_SUCCESS,
-    //LOGOUT_SUCCESS
+    LOGOUT_SUCCESS
 } from '../constants/Auth';
 
 const initialState = {
@@ -12,7 +12,6 @@ const initialState = {
     errorMsg: "",
     request: false
 };
-
 
 export default function userstate(state = initialState, action) {
     switch (action.type) {
@@ -35,6 +34,10 @@ export default function userstate(state = initialState, action) {
                 ...state,
                 errorMsg: action.error_message,
                 request: false
+            }
+        case LOGOUT_SUCCESS:
+            return {
+                ...initialState
             }
         default:
             return state

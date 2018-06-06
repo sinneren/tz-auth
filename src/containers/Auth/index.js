@@ -96,7 +96,7 @@ export class Auth extends Component {
     }
     componentDidUpdate() {
         if (this.props.status) {
-            browserHistory.goBack();
+            browserHistory.push('/');
         }
     }
     render() {
