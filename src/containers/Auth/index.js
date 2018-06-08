@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as AuthActions from '../../actions/AuthActions';
 import Spinner from '../../components/Spinner';
 import Alert from '../../components/Alert';
 import { browserHistory } from 'react-router';
@@ -9,7 +6,7 @@ import './style.css';
 
 const pattern_email = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm;
 
-export class Auth extends Component {
+export default class Auth extends Component {
     constructor(props) {
         super(props);
         this.submitBtn = React.createRef();
@@ -28,10 +25,10 @@ export class Auth extends Component {
         this.submitBtn.current.disabled = true;
 
         if (this.state.email.length > 0 && this.state.password.length > 0) {
-            this.props.actions.login({
+            this.props.handlePropsSubmit({
                 email: this.state.email,
                 password: this.state.password
-            });
+            })
         }
     }
     handleEmailChange(e) {
@@ -129,14 +126,3 @@ export class Auth extends Component {
         )
     }
 }
-function mapStateToProps (state) {
-    return state.auth;
-}
-
-function mapDispatchToProps (dispatch) {
-    return {
-        actions: bindActionCreators(AuthActions, dispatch)
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Auth)

@@ -5,8 +5,8 @@ API для получения данных пользователя
 
 Данные для успешной авторизации:
 |
-`"username" : "Jeremy56@gmail.com"`
-`"password" : "zoX__0EVLuirRao"`
+`"username" : "Glen98@hotmail.com"`
+`"password" : "5dz8hnIeje4uM9W"`
 
 ### Страницы
 - /admin - Авторизованный доступ
