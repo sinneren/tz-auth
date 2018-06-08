@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as newsActions from '../../actions/NewsActions';
 import Spinner from '../../components/Spinner';
+import NewsItem from '../../components/NewsItem';
 
 class News extends Component {
     componentDidMount() {
@@ -15,12 +16,9 @@ class News extends Component {
         if (this.props.data) {
             news_list = this.props.data.map((item, index) => {
                 const datetime = new Date(item.createdAt);
+                const datetimeformatted = datetime.getDate() + '/' + datetime.getMonth() + '/' + datetime.getFullYear();
                 return (
-                    <div key={item.id} className="col-4 mb-3">
-                        <h3>{item.name}</h3>
-                        <small className="d-block text-muted">{datetime.getDate() + '/' + datetime.getMonth() + '/' + datetime.getFullYear()}</small>
-                        <article>{item.text}</article>
-                    </div>
+                    <NewsItem key={item.id} name={item.name} date={datetimeformatted} text={item.text} />
                 );
             });
         }
