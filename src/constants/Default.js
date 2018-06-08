@@ -1,0 +1,1 @@
+export const URL = 'http://5ace0d5c23cb4e00148b83dd.mockapi.io/';

@@ -5,8 +5,7 @@ import {
     LOGOUT_SUCCESS
 } from '../constants/Auth';
 import axios from 'axios';
-
-const URL = 'http://5ace0d5c23cb4e00148b83dd.mockapi.io/';
+import { URL } from '../constants/Default';
 
 export function login(payload) {
     return dispatch => {

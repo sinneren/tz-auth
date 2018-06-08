@@ -3,10 +3,9 @@ import {
     USER_FAIL,
     USER_SUCCESS
 } from '../constants/User';
+import { URL } from '../constants/Default';
 
 import axios from 'axios';
-
-const URL = 'http://5ace0d5c23cb4e00148b83dd.mockapi.io/';
 
 export function get_user_info (id) {
     return dispatch => {

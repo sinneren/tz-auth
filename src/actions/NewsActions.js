@@ -3,10 +3,9 @@ import {
     NEWS_FAIL,
     NEWS_SUCCESS
 } from '../constants/News';
+import { URL } from '../constants/Default';
 
 import axios from 'axios';
-
-const URL = 'http://5ace0d5c23cb4e00148b83dd.mockapi.io/';
 
 export function load_news () {
     return dispatch => {
