@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Auth from '../../containers/Auth';
 import * as AuthActions from '../../actions/AuthActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
