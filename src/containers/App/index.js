@@ -4,8 +4,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as AuthActions from '../../actions/AuthActions';
 import Menu from '../../components/Menu';
+import PropTypes from 'prop-types';
 
 class App extends Component {
+    static propTypes = {
+        state: PropTypes.object
+    }
     render() {
         return (
             <div>

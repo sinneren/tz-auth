@@ -3,8 +3,12 @@ import * as AuthActions from '../../actions/AuthActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
+import PropTypes from 'prop-types';
 
 class Logout extends Component {
+    static propTypes = {
+        request: PropTypes.bool,
+    }
     componentDidMount() {
         this.props.actions.logout();
     }

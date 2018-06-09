@@ -3,8 +3,15 @@ import Auth from '../../components/Auth';
 import * as AuthActions from '../../actions/AuthActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class Login extends Component {
+    static propTypes = {
+        request: PropTypes.bool,
+        errorMsg: PropTypes.string,
+        status: PropTypes.bool
+    }
+
     handleRootSubmit(data) {
         this.props.actions.login({
             email: data.email,
