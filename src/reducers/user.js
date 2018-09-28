@@ -18,23 +18,19 @@ export default function userdatastate(state = initialState, action) {
                 request: true,
                 errorMsg: '',
             }
-            break;
         case USER_SUCCESS:
             return {
                 ...state,
                 data: action.response_data,
                 request: false
             }
-            break;
         case USER_FAIL:
             return {
                 ...state,
                 errorMsg: action.error_message,
                 request: false
             }
-            break;
         default:
             return state
-            break;
     }
 }

@@ -3,7 +3,7 @@ import Spinner from '../../components/Spinner';
 import Alert from '../../components/Alert';
 import { browserHistory } from 'react-router';
 import './style.css';
-
+// eslint-disable-next-line
 const pattern_email = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm;
 
 export default class Auth extends Component {

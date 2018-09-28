@@ -21,7 +21,6 @@ export default function userstate(state = initialState, action) {
                 request: true,
                 errorMsg: '',
             }
-            break;
         case LOGIN_SUCCESS:
             return {
                 ...state,
@@ -30,21 +29,17 @@ export default function userstate(state = initialState, action) {
                 user: action.response_data.username,
                 request: false
             }
-            break;
         case LOGIN_FAIL:
             return {
                 ...state,
                 errorMsg: action.error_message,
                 request: false
             }
-            break;
         case LOGOUT_SUCCESS:
             return {
                 ...initialState
             }
-            break;
         default:
             return state
-            break;
     }
 }
